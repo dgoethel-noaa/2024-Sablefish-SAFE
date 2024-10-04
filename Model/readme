@@ -1,13 +1,20 @@
 All model files are here.
 
+Model 23.5 was the model adopted for management advice in 2023. This model primarily follows 21.12 with the following changes:
 
-21.12 is the model used for management advice since 2021. It uses the nominal CPUE index.
+1. Removed the 1984 and 1987 trawl survey biomass index and length composition data.
+2. Incorporated all sources of non-commercial catch in federal waters in the total catch.
+3. Revised the stock-recruit bias correction, updated selectivity parameter sharing, and remove unnecessarily estimated fishing mortality parameters.
+4. Implemented a standardized CPUE index that combined data from both the hook-and-line and pot gear types (Cheng et al., 2023).
 
-A total of five new model runs were developed for the 2023 SAFE, which culminated in the final author recommended model 23.5 that incorporated all individual changes. The models explored 
-for 2023 were:
-•	Model 21.12: the continuity model matching the 2022 SAFE model but with updated data for 2023.
-•	Model 23.1: removed the 1984 and 1987 trawl survey biomass index and length composition data.
-•	Model 23.2: incorporated all sources of non-commercial catch in federal waters in the total catch.
-•	Model 23.3: revised the stock-recruit bias correction, updated selectivity parameter sharing, and remove unnecessarily estimated fishing mortality parameters.
-•	Model 23.4: implemented a standardized CPUE index that combined data from both the hook-and-line and pot gear types (Cheng et al., 2023).
-•	Model 23.5: integrated all updates from models 23.1—23.4; this is the final author recommended model for sablefish management advice in 2023.
+Model 21.12 was the previous model used for management advice since 2021. It uses the nominal CPUE index.
+
+Note very minor updates for 2024 included:
+
+1. Not estimating the sigma_R (stock-recruit variance parameter) per SSC and PT recommendations (following Model 21.12).
+2. Turning off the stock-recruit bias correction for MCMC runs (as requested by SSC/PT).
+3. Setting Mdev parameter to 0 per Model 21.12 (this was accidentally set to a non-zero value during jitter analysis in 2023).
+
+None of these changes had any noticeable impact on model results.
+
+
