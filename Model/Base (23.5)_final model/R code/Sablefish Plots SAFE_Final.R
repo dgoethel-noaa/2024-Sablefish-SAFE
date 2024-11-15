@@ -193,13 +193,7 @@ theme_reg = function() {
 ####################################################################################################################################################
 
 #############################################################################################################################################
-# other assessment (3.1)
-#############################################################################################################################################
-
-# these are provided by DFO, NOAA WC, and ADFG assessment authors, could probably read in time series and plot all on same graph as AK assessment
-
-#############################################################################################################################################
-# catch by gear (3.2)
+# catch by gear (3.1)
 #############################################################################################################################################
 
 catch_area_plot <- raw_catch %>%
@@ -241,11 +235,11 @@ catch_gear_plot <- catch_gear_historical %>%
   ylab("Catch (kilotons)")+
   theme(legend.text=element_text(size=6))+ scale_fill_jco()+ scale_color_jco()
 
-ggsave(paste0(dir_results , "//Fig. 3.2. Catch by gear.png"),width=8,height=5,dpi=300,plot=catch_gear_plot) 
+ggsave(paste0(dir_results , "//Fig. 3.1. Catch by gear.png"),width=8,height=5,dpi=300,plot=catch_gear_plot) 
 
 
 #############################################################################################################################################
-# catch by area (3.3)
+# catch by area (3.2)
 #############################################################################################################################################
 
 catch_area_hist_filter <- catch_area_hist %>%
@@ -274,11 +268,11 @@ catch_area_graph <- catch_area_plot_final %>%
   ylab("Catch (kilotons)")+
   scale_fill_jco()
 
-ggsave(paste0(dir_results , "//Fig. 3.3. Catch by area.png"),width=8,height=5,dpi=300,plot=catch_area_graph) 
+ggsave(paste0(dir_results , "//Fig. 3.2. Catch by area.png"),width=8,height=5,dpi=300,plot=catch_area_graph) 
 
 
 #############################################################################################################################################
-# survey comparison plot (3.4)
+# survey comparison plot (3.3)
 #############################################################################################################################################
 
 par(omi=c(0,0,0,0),mfrow=c(2,1),mgp=c(2.5,1,0))
@@ -308,11 +302,11 @@ survey_plot <- ggplot(surveys, aes(x = year)) +
   theme_reg()+
   theme(legend.position = "bottom", legend.text=element_text(size=8))
 
-ggsave(paste0(dir_results , "//Fig. 3.4. survey_trends.png"),width=8,height=5,dpi=300,plot=survey_plot) 
+ggsave(paste0(dir_results , "//Fig. 3.3. survey_trends.png"),width=8,height=5,dpi=300,plot=survey_plot) 
 
 
 #############################################################################################################################################
-# lls by area (3.5)
+# lls by area (3.4)
 #############################################################################################################################################
 
 par(omi=c(0,0.1,0,0.25),mgp=c(2.5,1,0))
@@ -331,17 +325,17 @@ lls_area_fig <- lls_area_rpw_apport %>%
   ylab("RPNs (1000s)")+
   scale_fill_jco()
 
-ggsave(paste0(dir_results , "//Fig. 3.5. LLS by area.png"),width=8,height=5,dpi=300,plot=lls_area_fig) 
+ggsave(paste0(dir_results , "//Fig. 3.4. LLS by area.png"),width=8,height=5,dpi=300,plot=lls_area_fig) 
 
 
 #############################################################################################################################################
-# lls by station (3.6)
+# lls by station (3.5)
 #############################################################################################################################################
 
 # this comes from Katy Echave every year, could probably just get her code and imbed it directly here
 
 #############################################################################################################################################
-# lls depredation (3.7)
+# lls depredation (3.5)
 #############################################################################################################################################
 
 par(omi=c(0,0.1,0,0.25),mgp=c(2.5,1,0))
@@ -364,11 +358,11 @@ lls_dep_fig <- lls_dep %>%
   ggtitle("Impact of Whale Depredation Corrections on Longline Survey RPNs")+
   scale_color_jco()
 
-ggsave(paste0(dir_results , "//Fig. 3.7. LLS depredation correction.png"),width=8,height=5,dpi=300,plot=lls_dep_fig) 
+ggsave(paste0(dir_results , "//Fig. 3.6. LLS depredation correction.png"),width=8,height=5,dpi=300,plot=lls_dep_fig) 
 
 
 #############################################################################################################################################
-# fishery depredation (3.8)
+# fishery depredation (3.7)
 #############################################################################################################################################
 
 par(omi=c(0,0.1,0,0.25),mgp=c(2.5,1,0))
@@ -381,7 +375,14 @@ fish_whale_dep_plot <- final_dep_area %>%
   labs(y = "Depredation (tons)", x = "Year")+
   scale_fill_jco()
 
-ggsave(paste0(dir_results , "//Fig. 3.8. Fishery Whale Dep by area.png"),width=8,height=5,dpi=300,plot=fish_whale_dep_plot) 
+ggsave(paste0(dir_results , "//Fig. 3.7. Fishery Whale Dep by area.png"),width=8,height=5,dpi=300,plot=fish_whale_dep_plot) 
+
+
+#############################################################################################################################################
+# other assessment (3.8)
+#############################################################################################################################################
+
+# these are provided by DFO, NOAA WC, and ADFG assessment authors, could probably read in time series and plot all on same graph as AK assessment
 
 
 #############################################################################################################################################
