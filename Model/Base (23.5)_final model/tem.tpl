@@ -4002,19 +4002,19 @@ FUNCTION write_HQreport
    ofstream HQreport("SABLEAK_HQ.dat");
  HQreport<<"#ASSESSMENT_SUMMARY -------------------------------------------------------------------------------------------------"<<endl;
  HQreport << "#STOCK  " << endl;
- HQreport << "SABLE " << endl;
+ HQreport << "\"SABLE\"" << endl;
  HQreport << "#STOCK_NAME"<<endl;
- HQreport << "Sablefish - Eastern Bering Sea / Aleutian Islands / Gulf of Alaska" << endl;
+ HQreport << "\"Sablefish - Eastern Bering Sea / Aleutian Islands / Gulf of Alaska\"" << endl;
   HQreport << "#REGION" <<endl;
- HQreport << "AK      " << endl;
+ HQreport << "\"AK\"" << endl;
   HQreport << "#ASMT_TYPE"<<endl;
- HQreport << "Operational  " << endl;
+ HQreport << "\"Operational\"" << endl;
   HQreport << "#ASMT_YEAR"<<endl;
  HQreport << endyr << endl;
   HQreport <<"#ASMT_MONTH"<<endl;
-  HQreport << "Dec  " << endl;
+  HQreport << "\"Dec\"" << endl;
    HQreport <<"#TIER"<<endl;
- HQreport << "3a " << endl;
+ HQreport << "\"3a\"" << endl;
  HQreport <<"#NUM_SEXES"<<endl;
  HQreport << 2  << endl;
   HQreport <<"#NUM_FISHERIES"<<endl;
@@ -4024,23 +4024,23 @@ FUNCTION write_HQreport
   HQreport <<"#RECAGE"<<endl;
  HQreport << 2  << endl;
   HQreport <<"#COMPLEX"<<endl;
-  HQreport << "NA " << endl;
+  HQreport << "\"NA\"" << endl;
    HQreport <<"#LAST_DATA_YEAR"<<endl;
    HQreport <<  endyr  <<endl;
   HQreport <<"#ASMT_MODEL_CATEGORY"<<endl;
-   HQreport <<"6 - Statistical Catch-at-Age"<<endl;
+   HQreport <<"\"6 - Statistical Catch-at-Age\""<<endl;
    HQreport <<"#ASMT_MODEL"<<endl;
-   HQreport <<"Custom SCAA: Custom Statistical Catch-at-Age"<<endl;
+   HQreport <<"\"Custom SCAA: Custom Statistical Catch-at-Age\""<<endl;
    HQreport <<"#MODEL_VERSION"<<endl;
-   HQreport <<"23.5"<<endl;
+   HQreport <<"\"23.5\""<<endl;
    HQreport <<"#ENSEMBLE"<<endl;
-   HQreport <<"NA"<<endl;
+   HQreport <<"\"NA\""<<endl;
    HQreport <<"#LEAD_LAB"<<endl;
-   HQreport <<"AFSC ABL"<<endl;
+   HQreport <<"\"AFSC\""<<endl;
    HQreport <<"#POC_EMAIL"<<endl;
-   HQreport <<"daniel.goethel@noaa.gov"<<endl;
+   HQreport <<"\"daniel.goethel@noaa.gov\""<<endl;
    HQreport <<"#REVIEW_RESULT"<<endl;
-   HQreport <<"Full acceptance"<<endl;
+   HQreport <<"\"Full acceptance\""<<endl;
    HQreport <<"#CATCH_INPUT_DATA"<<endl;
    HQreport <<5<<endl;
    HQreport <<"#ABUNDANCE_INPUT_DATA"<<endl;
@@ -4056,9 +4056,9 @@ FUNCTION write_HQreport
    HQreport <<"#F_YEAR"<<endl;
    HQreport <<endyr-1<<endl;
    HQreport <<"#F_BASIS"<<endl;
-   HQreport<<"F for Fully-Selected Fish"<<endl;
+   HQreport<<"\"F for Fully-Selected Fish\""<<endl;
    HQreport <<"#F_UNIT"<<endl;
-   HQreport<<"Fully-Selected F"<<endl;
+   HQreport<<"\"Fully-Selected F\""<<endl;
    HQreport <<"#BEST_F_ESTIMATE"<<endl;
    if((ph_ifq>0) && (ph_ifq_block2<1))  // post-IFQ sel does not  includes a recent time block
     {
@@ -4075,34 +4075,34 @@ FUNCTION write_HQreport
    HQreport <<"#F_LIMIT"<<endl;
    HQreport <<"!!!!!REPLACE WITH F SIS VALUE FROM SPREADSHEET"<<endl;
    HQreport <<"#F_LIMIT_BASIS"<<endl;
-   HQreport<<"F from 2023 asmt corresponding to specified 2022 OFL"<<endl;
+   HQreport<<"\"F from 2023 asmt corresponding to specified 2022 OFL\""<<endl;
    HQreport <<"#F_MSY"<<endl;
    HQreport<<FOFL<<endl;
    HQreport <<"#F_MSY_BASIS"<<endl;
-   HQreport<<"F35% as proxy"<<endl;
+   HQreport<<"\"F35% as proxy\""<<endl;
 
  HQreport<<"#BIOMASS_ESTIMATES --------------------------------------------------------------------------------------------------"<<endl;
 
    HQreport <<"#B_YEAR"<<endl;
    HQreport <<endyr<<endl;
    HQreport <<"#B_BASIS"<<endl;
-   HQreport <<"Mature Female Biomass"<<endl;
+   HQreport <<"\"Mature Female Biomass\""<<endl;
    HQreport <<"#B_UNIT"<<endl;
-   HQreport <<"Kilotons"<<endl;
+   HQreport <<"\"Metric tons\""<<endl;
    HQreport <<"#BEST_B_ESTIMATE"<<endl;
-   HQreport <<spawn_biom(endyr)<<endl;
+   HQreport <<spawn_biom(endyr)*1000<<endl;
    HQreport <<"#LOWER_B_ESTIMATE"<<endl;
   HQreport << "!!!!REPLACE WITH LOW 2.5% SSB FROM MCMC" <<endl;
    HQreport <<"#UPPER_B_ESTIMATE"<<endl;
  HQreport << "!!!!!REPLACE WITH high 97.5% SSB FROM MCMC" <<endl;
     HQreport <<"#ESTIMATE_METHOD"<<endl;
-   HQreport <<"Credible"<<endl;
+   HQreport <<"\"Credible\""<<endl;
     HQreport <<"#INTERVAL_SIZE"<<endl;
    HQreport <<95<<endl;
     HQreport <<"#B_MSY"<<endl;
    HQreport << "!!!!Replace with B_35 from Summary Table"<<endl;
     HQreport <<"#B_MSY_BASIS"<<endl;
-   HQreport << "B35%"<<endl;
+   HQreport <<"\"B35%\""<<endl;
 
  HQreport<<"#TIME_SERIES_ESTIMATES ----------------------------------------------------------------------------------------------"<<endl;
 
@@ -4113,9 +4113,9 @@ FUNCTION write_HQreport
  HQreport <<"#RECRUITMENT" << endl;
  HQreport  << pred_rec << endl;     
  HQreport <<"#SPAWNBIOMASS" << endl;
- HQreport  << spawn_biom << endl;  
+ HQreport  << spawn_biom*1000 << endl;  
  HQreport <<"#TOTALBIOMASS" << endl;
- HQreport  << tot_biom << endl;
+ HQreport  << tot_biom*1000 << endl;
  HQreport <<"#TOTFSHRYMORT" << endl;
    if((ph_ifq>0) && (ph_ifq_block2<1))  // post-IFQ sel does not  includes a recent time block
     {
@@ -4130,7 +4130,7 @@ FUNCTION write_HQreport
      HQreport  << Fmort_fish1*max(fish1_sel_f)+Fmort_fish3*max(fish3_sel_f) <<endl;
     }
  HQreport <<"#TOTALCATCH" << endl;
- HQreport  << pred_catch_fish1 + pred_catch_fish3 << endl;
+ HQreport  << (pred_catch_fish1 + pred_catch_fish3)*1000 << endl;
 
   HQreport << "#SURVEYDESC"<<endl;
  HQreport<<"GOA_trawl_survey; AK Cooperative Longline survey; AK US Longline survey; AK Longline fishery CPUE"<<endl;
